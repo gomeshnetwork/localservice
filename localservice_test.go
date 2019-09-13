@@ -12,7 +12,7 @@ type testA struct {
 	B *testB `inject:"test.B"`
 }
 
-func (a *testA) Start(config config.Config) error {
+func (a *testA) Start() error {
 	return nil
 }
 
@@ -20,7 +20,8 @@ type testB struct {
 	A *testA `inject:"test.A"`
 }
 
-func (b *testB) Start(config config.Config) error {
+func (b *testB) Start() error {
+	println("====")
 	return nil
 }
 
@@ -29,11 +30,11 @@ func TestInject(t *testing.T) {
 
 	localService := New(mesh)
 
-	localService.Register("test.A", func() (gomesh.Service, error) {
+	localService.Register("test.A", func(config config.Config) (gomesh.Service, error) {
 		return &testA{}, nil
 	})
 
-	localService.Register("test.B", func() (gomesh.Service, error) {
+	localService.Register("test.B", func(config config.Config) (gomesh.Service, error) {
 		return &testB{}, nil
 	})
 

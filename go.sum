@@ -30,8 +30,8 @@ github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b/go.mod h1:SBH7ygxi8pfU
 github.com/golang/mock v1.1.1/go.mod h1:oTYuIxOrZwtPieC+H1uAHpcLFnEyAGVDL/k47Jfbm0A=
 github.com/golang/protobuf v1.2.0 h1:P3YflyNX/ehuJFLhxviNdFxQPkGK5cDcApsge1SqnvM=
 github.com/golang/protobuf v1.2.0/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
-github.com/gomeshnetwork/gomesh v0.0.0-20190913090053-8a38caf159bb h1:MMRMjsvzT5wrPpU1RIXdTZhAt6ba0zs9fg9hVBS455g=
-github.com/gomeshnetwork/gomesh v0.0.0-20190913090053-8a38caf159bb/go.mod h1:J21CfgXHhPV9VLg+FfW9eK39HG9lqYoFEAbk/QFdt98=
+github.com/gomeshnetwork/gomesh v0.0.0-20190913100859-afc941fa7207 h1:uy7+xSfpE91hlOtj0SrCIZ/sgok7y+1gKAJClyW8ko4=
+github.com/gomeshnetwork/gomesh v0.0.0-20190913100859-afc941fa7207/go.mod h1:J21CfgXHhPV9VLg+FfW9eK39HG9lqYoFEAbk/QFdt98=
 github.com/google/go-cmp v0.2.0/go.mod h1:oXzfMopK8JAjlY9xF4vHSVASa0yLyX7SntLO5aqRK0M=
 github.com/google/uuid v1.0.0 h1:b4Gk+7WdP/d3HZH8EJsZpvV7EtDOgaZLtnaNGIu1adA=
 github.com/google/uuid v1.0.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=

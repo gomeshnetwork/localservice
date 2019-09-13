@@ -7,7 +7,7 @@ import (
 )
 
 // F .
-type F func() (gomesh.Service, error)
+type F func(config config.Config) (gomesh.Service, error)
 
 type localServiceImp struct {
 	creators map[string]F
@@ -35,8 +35,7 @@ func (module *localServiceImp) Register(name string, f F) {
 	module.builder.RegisterService(name)
 }
 
-func (module *localServiceImp) Start(config config.Config) error {
-	return nil
+func (module *localServiceImp) Config(config config.Config) {
 }
 
 func (module *localServiceImp) Name() string {
@@ -46,14 +45,15 @@ func (module *localServiceImp) Name() string {
 func (module *localServiceImp) BeginCreateService() error {
 	return nil
 }
-func (module *localServiceImp) CreateService(name string) (gomesh.Service, error) {
+
+func (module *localServiceImp) CreateService(name string, config config.Config) (gomesh.Service, error) {
 	f, ok := module.creators[name]
 
 	if !ok {
 		return nil, xerrors.Errorf("module %s service %s creator not found", module.Name(), name)
 	}
 
-	return f()
+	return f(config)
 }
 
 func (module *localServiceImp) EndCreateService() error {
@@ -76,8 +76,8 @@ func (module *localServiceImp) BeginStartService() error {
 	return nil
 }
 
-func (module *localServiceImp) StartService(service gomesh.Service, config config.Config) error {
-	return service.Start(config)
+func (module *localServiceImp) StartService(service gomesh.Service) error {
+	return nil
 }
 
 func (module *localServiceImp) EndStarService() error {
