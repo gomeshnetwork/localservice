@@ -13,8 +13,8 @@ github.com/dynamicgo/go-config v1.0.0 h1:iY97zNL+b3ds6IKddlFLIBMWPomnwTYxnFtnu5r
 github.com/dynamicgo/go-config v1.0.0/go.mod h1:oEl4mLg95VOLb4T9dQTAkAsq//w2MlctyeUvykYXhaM=
 github.com/dynamicgo/go-config-extend v0.0.0-20180711151121-c07be56d846f h1:HzA/uvC+PPucDgwStzSp8aGH3WQRRE4XsNgxIux+4ME=
 github.com/dynamicgo/go-config-extend v0.0.0-20180711151121-c07be56d846f/go.mod h1:d7akysj6QV5ce6QB/P+l+Gy08Ni1zb67q/Cawl/rxAs=
-github.com/dynamicgo/injector v0.0.0-20190912070738-c825960d4d1c h1:I5P+EvgkatKHd2JgL7CoxXJ2GQaOzixXfUhkid9W+xI=
-github.com/dynamicgo/injector v0.0.0-20190912070738-c825960d4d1c/go.mod h1:uYGjjkhACMZTl/rWU+oDH6i/UrG5215ajKXGoYHTKjs=
+github.com/dynamicgo/injector v0.0.0-20190913125708-0cce6e354a9a h1:ny/Qs+TrNzfhlqBGhCLxqdRHNdoFra8ZoQeGKxOlxkc=
+github.com/dynamicgo/injector v0.0.0-20190913125708-0cce6e354a9a/go.mod h1:uYGjjkhACMZTl/rWU+oDH6i/UrG5215ajKXGoYHTKjs=
 github.com/dynamicgo/slf4go v0.0.0-20190222111416-e8bfbeb91e19 h1:t5PHRiWvf0u+u2O6f5V4kO7Ff31eTMQVlIDYLNcnEzg=
 github.com/dynamicgo/slf4go v0.0.0-20190222111416-e8bfbeb91e19/go.mod h1:xAKwFnBEE6Em/lDKQ2nFkmnDfufDF6pCzqzKBqNi6E0=
 github.com/dynamicgo/xerrors v0.0.0-20190219051451-ec7525ce5de1 h1:bp3Xehls+lEKwcD2uaTXR8qgpSzkfCLuqKYOIOEG2TM=
@@ -30,8 +30,8 @@ github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b/go.mod h1:SBH7ygxi8pfU
 github.com/golang/mock v1.1.1/go.mod h1:oTYuIxOrZwtPieC+H1uAHpcLFnEyAGVDL/k47Jfbm0A=
 github.com/golang/protobuf v1.2.0 h1:P3YflyNX/ehuJFLhxviNdFxQPkGK5cDcApsge1SqnvM=
 github.com/golang/protobuf v1.2.0/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
-github.com/gomeshnetwork/gomesh v0.0.0-20190913100859-afc941fa7207 h1:uy7+xSfpE91hlOtj0SrCIZ/sgok7y+1gKAJClyW8ko4=
-github.com/gomeshnetwork/gomesh v0.0.0-20190913100859-afc941fa7207/go.mod h1:J21CfgXHhPV9VLg+FfW9eK39HG9lqYoFEAbk/QFdt98=
+github.com/gomeshnetwork/gomesh v0.0.0-20190913125852-a0cf8c4cbd25 h1:WLaXORWotyXD1594FG3ZR4ei9tSwKA1mpJ5DichsVew=
+github.com/gomeshnetwork/gomesh v0.0.0-20190913125852-a0cf8c4cbd25/go.mod h1:WtuiYl7ht5HojbNPnU9DTla2gsbnWrwbWZKw0ni1vCw=
 github.com/google/go-cmp v0.2.0/go.mod h1:oXzfMopK8JAjlY9xF4vHSVASa0yLyX7SntLO5aqRK0M=
 github.com/google/uuid v1.0.0 h1:b4Gk+7WdP/d3HZH8EJsZpvV7EtDOgaZLtnaNGIu1adA=
 github.com/google/uuid v1.0.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
