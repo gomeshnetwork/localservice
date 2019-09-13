@@ -32,6 +32,7 @@ func New(mesh gomesh.Mesh) LocalService {
 
 func (module *localServiceImp) Register(name string, f F) {
 	module.creators[name] = f
+	module.builder.RegisterService(name)
 }
 
 func (module *localServiceImp) Start(config config.Config) error {
