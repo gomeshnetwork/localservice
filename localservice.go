@@ -1,70 +1,84 @@
 package localservice
 
 import (
-	"sync"
-
 	"github.com/dynamicgo/go-config"
 	"github.com/dynamicgo/xerrors"
 	"github.com/gomeshnetwork/gomesh"
 )
 
 // F .
-type F func(config config.Config) (gomesh.Service, error)
+type F func() (gomesh.Service, error)
 
-type localServiceExtension struct {
+type localServiceImp struct {
 	creators map[string]F
+	builder  gomesh.ModuleBuilder
 }
 
-func newExtension() *localServiceExtension {
-	return &localServiceExtension{
+// LocalService .
+type LocalService interface {
+	Register(name string, f F)
+}
+
+// New .
+func New(mesh gomesh.Mesh) LocalService {
+	impl := &localServiceImp{
 		creators: make(map[string]F),
 	}
+
+	impl.builder = mesh.Module(impl)
+
+	return impl
 }
 
-func (extension *localServiceExtension) register(name string, f F) {
-	extension.creators[name] = f
+func (module *localServiceImp) Register(name string, f F) {
+	module.creators[name] = f
 }
 
-func (extension *localServiceExtension) Name() string {
-	return "gomesh.extension.local"
-}
-
-func (extension *localServiceExtension) Begin(config config.Config, builder gomesh.MeshBuilder) error {
-
-	for name := range extension.creators {
-		builder.RegisterService(extension.Name(), name)
-	}
-
+func (module *localServiceImp) Start(config config.Config) error {
 	return nil
 }
 
-func (extension *localServiceExtension) CreateSerivce(serviceName string, config config.Config) (gomesh.Service, error) {
-	f, ok := extension.creators[serviceName]
+func (module *localServiceImp) Name() string {
+	return "gomesh.module.local"
+}
+
+func (module *localServiceImp) BeginCreateService() error {
+	return nil
+}
+func (module *localServiceImp) CreateService(name string) (gomesh.Service, error) {
+	f, ok := module.creators[name]
 
 	if !ok {
-		return nil, xerrors.Wrapf(gomesh.ErrNotFound, "service %s not found", serviceName)
+		return nil, xerrors.Errorf("module %s service %s creator not found", module.Name(), name)
 	}
 
-	return f(config)
+	return f()
 }
 
-func (extension *localServiceExtension) End() error {
+func (module *localServiceImp) EndCreateService() error {
 	return nil
 }
 
-var extension *localServiceExtension
-var once sync.Once
-
-func get() *localServiceExtension {
-	once.Do(func() {
-		extension = newExtension()
-		gomesh.Builder().RegisterExtension(extension)
-	})
-
-	return extension
+func (module *localServiceImp) BeginSetupService() error {
+	return nil
 }
 
-// Register .
-func Register(name string, f F) {
-	get().register(name, f)
+func (module *localServiceImp) SetupService(service gomesh.Service) error {
+	return nil
+}
+
+func (module *localServiceImp) EndSetupService() error {
+	return nil
+}
+
+func (module *localServiceImp) BeginStartService() error {
+	return nil
+}
+
+func (module *localServiceImp) StartService(service gomesh.Service, config config.Config) error {
+	return service.Start(config)
+}
+
+func (module *localServiceImp) EndStarService() error {
+	return nil
 }
